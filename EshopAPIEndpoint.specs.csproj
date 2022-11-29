@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F1A5D0F-E259-4BCA-BF46-CAFAF989EFDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EshopAPIEndpoint.specs</RootNamespace>
+    <AssemblyName>EshopAPIEndpoint.specs</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIResults\DeleteRequestResult\DeleteItemCatalogResult.cs" />
+    <Compile Include="APIResults\GetRequestResult\GetCatalogItemResult.cs" />
+    <Compile Include="APIResults\GetRequestResult\GetCatalogItemsResult.cs" />
+    <Compile Include="APIResults\PostRequestResult\PostAuthenticationResult.cs" />
+    <Compile Include="APIResults\PostRequestResult\PostCatalogItemResult.cs" />
+    <Compile Include="APIResults\PutRequestResult\PutItemCatalogResult.cs" />
+    <Compile Include="CallAPI\DeleteAPIEndpoint.cs" />
+    <Compile Include="CallAPI\GetAPIEndpoint.cs" />
+    <Compile Include="CallAPI\PostAPIEndpoint.cs" />
+    <Compile Include="CallAPI\PutAPIEndpoint.cs" />
+    <Compile Include="Constants\DeleteAPIConstant.cs" />
+    <Compile Include="Constants\GeneralAPIEndpoint.cs" />
+    <Compile Include="Constants\GetAPIConstant.cs" />
+    <Compile Include="Constants\PostAPIConstants.cs" />
+    <Compile Include="Constants\PutAPIConstant.cs" />
+    <Compile Include="Data manipulation\PostItemCatalogToJson.cs" />
+    <Compile Include="Features\Feature1.feature.cs" />
+    <Compile Include="Model\Authentication.cs" />
+    <Compile Include="Model\CatalogItem.cs" />
+    <Compile Include="Model\CatalogItems.cs" />
+    <Compile Include="Model\GetItemDetail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinitions\Feature1StepDefinitions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1.feature" />
+    <None Include="ServerResponseJsonSchema\AuthenticationResponseSchema.json" />
+    <None Include="ServerResponseJsonSchema\DeleteCatalogItemResponseSchema.json" />
+    <None Include="ServerResponseJsonSchema\GetCatalogItemResponseSchema.json" />
+    <None Include="ServerResponseJsonSchema\GetCatalogItemsResponseSchema.json" />
+    <None Include="ServerResponseJsonSchema\UpdateCatalogItemResponseSchema.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="RestSharp">
+      <Version>108.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SpecFlow">
+      <Version>3.9.74</Version>
+    </PackageReference>
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation">
+      <Version>3.9.74</Version>
+    </PackageReference>
+    <PackageReference Include="SpecFlow.xUnit">
+      <Version>3.9.74</Version>
+    </PackageReference>
+    <PackageReference Include="System.Collections">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="xunit.assert">
+      <Version>2.4.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "boolean"
+    },
+    "token": {
+      "type": "string",
+      "nullable": "true"
+    },
+    "username": {
+      "type": "string",
+      "nullable": "true"
+    },
+    "isLockedOut": {
+      "type": "boolean"
+    },
+    "isNotAllowed": {
+      "type": "boolean"
+    },
+    "requiresTwoFactor": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "result",
+    "isLockedOut",
+    "isNotAllowed",
+    "requiresTwoFactor"
+  ]
+}
