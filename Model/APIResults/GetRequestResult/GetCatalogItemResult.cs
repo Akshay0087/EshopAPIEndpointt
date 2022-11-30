@@ -6,9 +6,10 @@ namespace EshopAPIEndpoint.specs.APIResults
 {
     public static class GetCatalogItemResult
     {
-        public static int statusCode;
-        public static IReadOnlyCollection<HeaderParameter> header;
-        public static CatalogItem catalogItem;
-        public static string serverResponse;
+        public static int statusCode { get; set; }
+        public static IReadOnlyCollection<HeaderParameter> header { get; set; }
+        public static CatalogItem catalogItem { get; set; }
+        public static string serverResponse { get; set; }
+        public static decimal executionTime { get; set; }
     }
 }

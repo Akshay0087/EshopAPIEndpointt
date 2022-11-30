@@ -2,6 +2,6 @@
 {
     public class GetItemDetail
     {
-        public CatalogItem catalogItem;
+        public CatalogItem catalogItem { get; set;}
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Threading.Tasks;
 
 
 namespace EshopAPIEndpoint.specs.Model
@@ -9,13 +8,10 @@ namespace EshopAPIEndpoint.specs.Model
     public class CatalogItem
     {
         public int Id { get; set; }
-
         public int CatalogTypeId { get; set; }
         public string CatalogType { get; set; } = "NotSet";
-
         public int CatalogBrandId { get; set; }
         public string CatalogBrand { get; set; } = "NotSet";
-
         [Required(ErrorMessage = "The Name field is required")]
         public string Name { get; set; }
 
@@ -60,20 +56,7 @@ namespace EshopAPIEndpoint.specs.Model
             return null;
         }
 
-        public static async Task<string> DataToBase64(IFileListEntry fileItem)
-        {
-            using (var reader = new StreamReader(fileItem.Data))
-            {
-                using (var memStream = new MemoryStream())
-                {
-                    await reader.BaseStream.CopyToAsync(memStream);
-                    var fileData = memStream.ToArray();
-                    var encodedBase64 = Convert.ToBase64String(fileData);
-
-                    return encodedBase64;
-                }
-            }
-        }
+       
 
         private static bool IsExtensionValid(string fileName)
         {

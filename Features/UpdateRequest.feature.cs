@@ -19,7 +19,7 @@ namespace EshopAPIEndpoint.specs.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class Feature1Feature : object, Xunit.IClassFixture<Feature1Feature.FixtureData>, System.IDisposable
+    public partial class UpdateRequestFeature : object, Xunit.IClassFixture<UpdateRequestFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace EshopAPIEndpoint.specs.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Feature1.feature"
+#line 1 "UpdateRequest.feature"
 #line hidden
         
-        public Feature1Feature(Feature1Feature.FixtureData fixtureData, EshopAPIEndpoint_specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public UpdateRequestFeature(UpdateRequestFeature.FixtureData fixtureData, EshopAPIEndpoint_specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace EshopAPIEndpoint.specs.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Feature1", "A short summary offd the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "UpdateRequest", "As a user I want to able to update details of specific product", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,17 +80,17 @@ namespace EshopAPIEndpoint.specs.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="test")]
-        [Xunit.TraitAttribute("FeatureTitle", "Feature1")]
-        [Xunit.TraitAttribute("Description", "test")]
-        [Xunit.TraitAttribute("Category", "tagorpe")]
-        public void Test()
+        [Xunit.SkippableFactAttribute(DisplayName="Get details of specific product")]
+        [Xunit.TraitAttribute("FeatureTitle", "UpdateRequest")]
+        [Xunit.TraitAttribute("Description", "Get details of specific product")]
+        [Xunit.TraitAttribute("Category", "tag1")]
+        public void GetDetailsOfSpecificProduct()
         {
             string[] tagsOfScenario = new string[] {
-                    "tagorpe"};
+                    "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get details of specific product", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -100,8 +100,44 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 6
+ testRunner.Given("User is logged with email address \"admin@microsoft.com\" and password \"Pass@word1\"" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 7
- testRunner.Then("tesing API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User is authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "id",
+                            "catalogBrandId",
+                            "catalogTypeId",
+                            "description",
+                            "name",
+                            "pictureUri",
+                            "pictureBase64",
+                            "pictureName",
+                            "price"});
+                table3.AddRow(new string[] {
+                            "3",
+                            "2",
+                            "2",
+                            "Town - Green Shirt",
+                            "Town-Blue Shirt",
+                            "shirt.com/",
+                            "shirt_category",
+                            "Multicolor shirt",
+                            "900"});
+#line 8
+ testRunner.When("User input product detail", ((string)(null)), table3, "When ");
+#line hidden
+#line 11
+ testRunner.Then("Server Response status for updating the item should be OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 12
+ testRunner.And("Server Response content for updating the item should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.And("Response time for updating the item is between acceptable range", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -114,12 +150,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                Feature1Feature.FeatureSetup();
+                UpdateRequestFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                Feature1Feature.FeatureTearDown();
+                UpdateRequestFeature.FeatureTearDown();
             }
         }
     }

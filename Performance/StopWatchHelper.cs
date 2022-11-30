@@ -1,27 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EshopAPIEndpoint.specs.Performance
 {
-    public class StopWatchHelper
+    public static class StopWatchHelper
     {
-        Stopwatch stopwatch=new Stopwatch();
-
-        public void StartStopwatch()
+        static Stopwatch stopwatch = null;
+        public static void StartStopwatch()
         {
+            stopwatch = GetStopwatch();
             stopwatch.Start();
         }
-
-        public int StopStopwatch()
+        public static decimal StopStopwatch()
         {
             stopwatch.Stop();
-            var timeSpan = stopwatch.Elapsed;
+            var timeSpan = stopwatch.ElapsedMilliseconds;
             stopwatch.Reset();
-            return Convert.ToInt32(timeSpan);
+            return timeSpan;
+        }
+
+        private static Stopwatch GetStopwatch()
+        {
+            return new Stopwatch();
         }
     }
 }

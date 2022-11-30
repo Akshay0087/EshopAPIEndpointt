@@ -42,12 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIResults\DeleteRequestResult\DeleteItemCatalogResult.cs" />
-    <Compile Include="APIResults\GetRequestResult\GetCatalogItemResult.cs" />
-    <Compile Include="APIResults\GetRequestResult\GetCatalogItemsResult.cs" />
-    <Compile Include="APIResults\PostRequestResult\PostAuthenticationResult.cs" />
-    <Compile Include="APIResults\PostRequestResult\PostCatalogItemResult.cs" />
-    <Compile Include="APIResults\PutRequestResult\PutItemCatalogResult.cs" />
+    <Compile Include="Constants\ResponseHeaderConstant.cs" />
+    <Compile Include="Constants\ServerResponseTimeConstant.cs" />
+    <Compile Include="Data manipulation\Headervalidation.cs" />
+    <Compile Include="Data manipulation\ServerResponseValidation.cs" />
+    <Compile Include="Data manipulation\TableToCatalogItemModel.cs" />
+    <Compile Include="Hooks\Hooks.cs" />
+    <Compile Include="Model\APIResults\DeleteRequestResult\DeleteItemCatalogResult.cs" />
+    <Compile Include="Model\APIResults\GetRequestResult\GetCatalogItemResult.cs" />
+    <Compile Include="Model\APIResults\GetRequestResult\GetCatalogItemsResult.cs" />
+    <Compile Include="Model\APIResults\PostRequestResult\PostAuthenticationResult.cs" />
+    <Compile Include="Model\APIResults\PostRequestResult\PostCatalogItemResult.cs" />
+    <Compile Include="Model\APIResults\PutRequestResult\PutItemCatalogResult.cs" />
     <Compile Include="CallAPI\DeleteAPIEndpoint.cs" />
     <Compile Include="CallAPI\GetAPIEndpoint.cs" />
     <Compile Include="CallAPI\PostAPIEndpoint.cs" />
@@ -58,18 +64,27 @@
     <Compile Include="Constants\PostAPIConstants.cs" />
     <Compile Include="Constants\PutAPIConstant.cs" />
     <Compile Include="Data manipulation\PostItemCatalogToJson.cs" />
-    <Compile Include="Features\Feature1.feature.cs" />
     <Compile Include="Model\Authentication.cs" />
     <Compile Include="Model\CatalogItem.cs" />
     <Compile Include="Model\CatalogItems.cs" />
     <Compile Include="Model\GetItemDetail.cs" />
+    <Compile Include="Performance\CheckResponseTime.cs" />
+    <Compile Include="Performance\StopWatchHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StepDefinitions\Feature1StepDefinitions.cs" />
+    <Compile Include="StatusCodeValidation\ClientErrors.cs" />
+    <Compile Include="StatusCodeValidation\ServerError.cs" />
+    <Compile Include="StatusCodeValidation\SuccessResponse.cs" />
+    <Compile Include="StepDefinitions\GetRequestStepDefinitions.cs" />
+    <Compile Include="StepDefinitions\PostRequestStepDefinitions.cs" />
+    <Compile Include="StepDefinitions\UpdateRequestStepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\Feature1.feature" />
+    <None Include="Features\GetRequest.feature" />
+    <None Include="Features\PostRequest.feature" />
+    <None Include="Features\UpdateRequest.feature" />
     <None Include="ServerResponseJsonSchema\AuthenticationResponseSchema.json" />
     <None Include="ServerResponseJsonSchema\DeleteCatalogItemResponseSchema.json" />
+    <None Include="ServerResponseJsonSchema\ErrorResponseSchema.json" />
     <None Include="ServerResponseJsonSchema\GetCatalogItemResponseSchema.json" />
     <None Include="ServerResponseJsonSchema\GetCatalogItemsResponseSchema.json" />
     <None Include="ServerResponseJsonSchema\UpdateCatalogItemResponseSchema.json" />
@@ -77,6 +92,9 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json.Schema">
+      <Version>3.0.14</Version>
     </PackageReference>
     <PackageReference Include="RestSharp">
       <Version>108.0.3</Version>
@@ -97,5 +115,6 @@
       <Version>2.4.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

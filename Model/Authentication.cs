@@ -1,7 +1,7 @@
 ﻿namespace EshopAPIEndpoint.specs.Model
 {
-    public class Authentication
+    public static class Authentication
     {
-        public string token { get; set; }
+        public static string token { get; set; }
     }
 }

@@ -20,7 +20,7 @@
               "nullable": "true"
             },
             "price": {
-              "type": "integer"
+              "type": "number"
             },
             "pictureUri": {
               "type": "string",
