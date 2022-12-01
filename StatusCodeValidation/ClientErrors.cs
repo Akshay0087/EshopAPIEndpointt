@@ -16,5 +16,9 @@ namespace EshopAPIEndpoint.specs.StatusCodeValidation
         {
             Assert.True(status == 403, "Status not equal to 403");
         }
+        public static void ConflictStatus(int status)
+        {
+            Assert.True(status == 409, "Status not equal to 403");
+        }
     }
 }

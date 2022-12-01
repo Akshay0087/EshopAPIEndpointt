@@ -80,16 +80,16 @@ namespace EshopAPIEndpoint.specs.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Get details of specific product")]
+        [Xunit.SkippableFactAttribute(DisplayName="Update details of specific valid product with authorisation")]
         [Xunit.TraitAttribute("FeatureTitle", "UpdateRequest")]
-        [Xunit.TraitAttribute("Description", "Get details of specific product")]
+        [Xunit.TraitAttribute("Description", "Update details of specific valid product with authorisation")]
         [Xunit.TraitAttribute("Category", "tag1")]
-        public void GetDetailsOfSpecificProduct()
+        public void UpdateDetailsOfSpecificValidProductWithAuthorisation()
         {
             string[] tagsOfScenario = new string[] {
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get details of specific product", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update details of specific valid product with authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("User is authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "id",
                             "catalogBrandId",
                             "catalogTypeId",
@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "pictureBase64",
                             "pictureName",
                             "price"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "3",
                             "2",
                             "2",
@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Multicolor shirt",
                             "900"});
 #line 8
- testRunner.When("User input product detail", ((string)(null)), table3, "When ");
+ testRunner.When("User input product detail", ((string)(null)), table4, "When ");
 #line hidden
 #line 11
  testRunner.Then("Server Response status for updating the item should be OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -138,6 +138,109 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 13
  testRunner.And("Response time for updating the item is between acceptable range", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Update details of an invalid product with authorisation")]
+        [Xunit.TraitAttribute("FeatureTitle", "UpdateRequest")]
+        [Xunit.TraitAttribute("Description", "Update details of an invalid product with authorisation")]
+        public void UpdateDetailsOfAnInvalidProductWithAuthorisation()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update details of an invalid product with authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 16
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 17
+ testRunner.Given("User is logged with email address \"admin@microsoft.com\" and password \"Pass@word1\"" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+ testRunner.And("User is authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "id",
+                            "catalogBrandId",
+                            "catalogTypeId",
+                            "description",
+                            "name",
+                            "pictureUri",
+                            "pictureBase64",
+                            "pictureName",
+                            "price"});
+                table5.AddRow(new string[] {
+                            "1",
+                            "2",
+                            "2",
+                            "Town - Green Shirt",
+                            "Town-Blue Shirt",
+                            "shirt.com/",
+                            "shirt_category",
+                            "Multicolor shirt",
+                            "900"});
+#line 19
+ testRunner.When("User input product detail", ((string)(null)), table5, "When ");
+#line hidden
+#line 22
+ testRunner.Then("Server Response status for updating the item should be Internal Server Error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Update details of specific valid product without authorisation")]
+        [Xunit.TraitAttribute("FeatureTitle", "UpdateRequest")]
+        [Xunit.TraitAttribute("Description", "Update details of specific valid product without authorisation")]
+        public void UpdateDetailsOfSpecificValidProductWithoutAuthorisation()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update details of specific valid product without authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "id",
+                            "catalogBrandId",
+                            "catalogTypeId",
+                            "description",
+                            "name",
+                            "pictureUri",
+                            "pictureBase64",
+                            "pictureName",
+                            "price"});
+                table6.AddRow(new string[] {
+                            "3",
+                            "2",
+                            "2",
+                            "Town - Green Shirt",
+                            "Town-Blue Shirt",
+                            "shirt.com/",
+                            "shirt_category",
+                            "Multicolor shirt",
+                            "900"});
+#line 25
+ testRunner.When("User input product detail", ((string)(null)), table6, "When ");
+#line hidden
+#line 28
+ testRunner.Then("Server Response status for updating the item should be Unauthorised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,10 +1,9 @@
-﻿using static EshopAPIEndpoint.specs.APIResults.DeleteRequestResult.DeleteItemCatalogResult;
-using static EshopAPIEndpoint.specs.Performance.StopWatchHelper;
-using EshopAPIEndpoint.specs.APIResults.PostRequestResult;
+﻿using EshopAPIEndpoint.specs.APIResults.PostRequestResult;
 using EshopAPIEndpoint.specs.Constants;
-using EshopAPIEndpoint.specs.Performance;
 using RestSharp;
 using System;
+using static EshopAPIEndpoint.specs.APIResults.DeleteRequestResult.DeleteItemCatalogResult;
+using static EshopAPIEndpoint.specs.Performance.StopWatchHelper;
 
 namespace EshopAPIEndpoint.specs.CallAPI
 {
@@ -16,6 +15,7 @@ namespace EshopAPIEndpoint.specs.CallAPI
             var client = new RestClient(GeneralAPIEndpoint.generalAPIuri);
             var request = new RestRequest(DeleteAPIConstant.deleteItemUri, Method.Delete);
             request.AddHeader("Authorization", "Bearer " + PostAuthenticationResult.token);
+            request.AddUrlSegment("catalogItemId", itemID);
             try
             {
                StartStopwatch();

@@ -1,9 +1,10 @@
+using EshopAPIEndpoint.specs.APIResults.PostRequestResult;
 using EshopAPIEndpoint.specs.APIResults.PutRequestResult;
 using EshopAPIEndpoint.specs.CallAPI;
+using EshopAPIEndpoint.specs.Constants;
 using EshopAPIEndpoint.specs.Data_manipulation;
 using EshopAPIEndpoint.specs.Performance;
 using EshopAPIEndpoint.specs.StatusCodeValidation;
-using System;
 using TechTalk.SpecFlow;
 
 namespace EshopAPIEndpoint.specs.StepDefinitions
@@ -35,5 +36,17 @@ namespace EshopAPIEndpoint.specs.StepDefinitions
         {
             CheckResponseTime.ResponseTimeValidator(PutItemCatalogResult.executionTime);
         }
+        [Then(@"Server Response status for updating the item should be Internal Server Error")]
+        public void ThenServerResponseStatusForUpdatingTheItemShouldBeInternalServerError()
+        {
+
+            ServerError.InternalServerErrorStatus(PutItemCatalogResult.statusCode);
+        }
+        [Then(@"Server Response status for updating the item should be Unauthorised")]
+        public void ThenServerResponseStatusForUpdatingTheItemShouldBeUnauthorised()
+        {
+            ClientErrors.UnauthorizedStatus(PutItemCatalogResult.statusCode);
+        }
+
     }
 }

@@ -1,3 +1,4 @@
+using EshopAPIEndpoint.specs.APIResults.DeleteRequestResult;
 using EshopAPIEndpoint.specs.APIResults.PostRequestResult;
 using EshopAPIEndpoint.specs.CallAPI;
 using EshopAPIEndpoint.specs.Data_manipulation;
@@ -52,10 +53,13 @@ namespace EshopAPIEndpoint.specs.StepDefinitions
         {
             ClientErrors.UnauthorizedStatus(PostCatalogItemResult.statusCode);
         }
-
-
-
-
+        
+        [Then(@"Server Response status should be Conflict")]
+        public void ThenServerResponseStatusShouldBeConflict()
+        {
+            ClientErrors.ConflictStatus(PostCatalogItemResult.statusCode);
+        }
+        
 
 
 

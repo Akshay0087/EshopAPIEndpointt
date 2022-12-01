@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace EshopAPIEndpoint.specs.Performance
 {
@@ -18,7 +17,6 @@ namespace EshopAPIEndpoint.specs.Performance
             stopwatch.Reset();
             return timeSpan;
         }
-
         private static Stopwatch GetStopwatch()
         {
             return new Stopwatch();

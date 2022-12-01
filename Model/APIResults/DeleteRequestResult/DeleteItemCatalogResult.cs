@@ -9,5 +9,13 @@ namespace EshopAPIEndpoint.specs.APIResults.DeleteRequestResult
         public static IReadOnlyCollection<HeaderParameter> header { get; set; }
         public static string serverResponse { get; set; }
         public static decimal executionTime { get; set; }
+
+        public static void ResetDeleteResult()
+        {
+            statusCode = 0;
+            header = null;
+            serverResponse = null;
+            executionTime = 0;
+        }
     }
 }

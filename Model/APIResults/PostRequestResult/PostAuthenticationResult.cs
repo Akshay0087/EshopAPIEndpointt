@@ -11,5 +11,14 @@ namespace EshopAPIEndpoint.specs.APIResults.PostRequestResult
         public static string token;
         public static string serverResponse { get; set; }
         public static decimal executionTime { get; set; }
+
+        public static void ResetPostAuthenticataionResult()
+        {
+            statusCode = 0;
+            header = null;
+            token= null;
+            serverResponse = null;
+            executionTime = 0;
+        }
     }
 }

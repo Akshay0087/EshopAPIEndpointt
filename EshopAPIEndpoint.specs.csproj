@@ -45,6 +45,7 @@
     <Compile Include="Constants\ResponseHeaderConstant.cs" />
     <Compile Include="Constants\ServerResponseTimeConstant.cs" />
     <Compile Include="Data manipulation\Headervalidation.cs" />
+    <Compile Include="Data manipulation\ResetRequestResult.cs" />
     <Compile Include="Data manipulation\ServerResponseValidation.cs" />
     <Compile Include="Data manipulation\TableToCatalogItemModel.cs" />
     <Compile Include="Hooks\Hooks.cs" />
@@ -74,11 +75,13 @@
     <Compile Include="StatusCodeValidation\ClientErrors.cs" />
     <Compile Include="StatusCodeValidation\ServerError.cs" />
     <Compile Include="StatusCodeValidation\SuccessResponse.cs" />
+    <Compile Include="StepDefinitions\DeleteRequestStepDefinitions.cs" />
     <Compile Include="StepDefinitions\GetRequestStepDefinitions.cs" />
     <Compile Include="StepDefinitions\PostRequestStepDefinitions.cs" />
     <Compile Include="StepDefinitions\UpdateRequestStepDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\DeleteRequest.feature" />
     <None Include="Features\GetRequest.feature" />
     <None Include="Features\PostRequest.feature" />
     <None Include="Features\UpdateRequest.feature" />

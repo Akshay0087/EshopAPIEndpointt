@@ -23,7 +23,6 @@ namespace EshopAPIEndpoint.specs.CallAPI
                 username = email,
                 password = password
             };
-            var bodyy = JsonConvert.SerializeObject(body);
             request.AddBody(JsonConvert.SerializeObject(body), "application/json");
 
             try

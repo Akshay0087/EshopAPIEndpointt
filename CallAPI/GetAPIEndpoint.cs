@@ -38,8 +38,8 @@ namespace EshopAPIEndpoint.specs.CallAPI
         public static bool GetCatalogueItem(int id)
         {
             RestResponse response;
-            var client = new RestClient("https://localhost:44339/api/");
-            var request = new RestRequest("catalog-items/{item-id}", Method.Get);
+            var client = new RestClient(GeneralAPIEndpoint.generalAPIuri);
+            var request = new RestRequest(GetAPIConstant.getCatalogItem, Method.Get);
             request.AddUrlSegment("item-id", id);
             request.OnBeforeDeserialization = resp =>
             {

@@ -19,7 +19,7 @@ namespace EshopAPIEndpoint.specs.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PostRequestFeature : object, Xunit.IClassFixture<PostRequestFeature.FixtureData>, System.IDisposable
+    public partial class DeleteRequestFeature : object, Xunit.IClassFixture<DeleteRequestFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace EshopAPIEndpoint.specs.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "PostRequest.feature"
+#line 1 "DeleteRequest.feature"
 #line hidden
         
-        public PostRequestFeature(PostRequestFeature.FixtureData fixtureData, EshopAPIEndpoint_specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public DeleteRequestFeature(DeleteRequestFeature.FixtureData fixtureData, EshopAPIEndpoint_specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace EshopAPIEndpoint.specs.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "PostRequest", "As a user I want to able to create a product", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "DeleteRequest", "As a user I want to able to remove a specific product", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,16 +80,16 @@ namespace EshopAPIEndpoint.specs.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Create catalogue Item with authorisation")]
-        [Xunit.TraitAttribute("FeatureTitle", "PostRequest")]
-        [Xunit.TraitAttribute("Description", "Create catalogue Item with authorisation")]
+        [Xunit.SkippableFactAttribute(DisplayName="Delete specific product with authorisation")]
+        [Xunit.TraitAttribute("FeatureTitle", "DeleteRequest")]
+        [Xunit.TraitAttribute("Description", "Delete specific product with authorisation")]
         [Xunit.TraitAttribute("Category", "tag1")]
-        public void CreateCatalogueItemWithAuthorisation()
+        public void DeleteSpecificProductWithAuthorisation()
         {
             string[] tagsOfScenario = new string[] {
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create catalogue Item with authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete specific product with authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -107,48 +107,36 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("User is authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "catalogBrandId",
-                            "catalogTypeId",
-                            "description",
-                            "name",
-                            "pictureUri",
-                            "pictureBase64",
-                            "pictureName",
-                            "price"});
-                table1.AddRow(new string[] {
-                            "2",
-                            "2",
-                            "Black laptop",
-                            "Black laptop",
-                            "shirt.com/",
-                            "watch",
-                            "watch shirt",
-                            "900"});
 #line 8
- testRunner.When("User add item", ((string)(null)), table1, "When ");
+ testRunner.When("User enters item id \"52\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+ testRunner.Then("Server Response status for deleting an item should be OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 10
+ testRunner.And("Server Response content for deleting an item should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.Then("Server Response status should be Created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("server Response Header for deleting an item should be valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
  testRunner.And("Response time for authentication is between acceptable range", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
- testRunner.And("Response time for creating item is between acceptable range", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Response time for deleting item is between acceptable range", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Create catalogue Item without authorisation")]
-        [Xunit.TraitAttribute("FeatureTitle", "PostRequest")]
-        [Xunit.TraitAttribute("Description", "Create catalogue Item without authorisation")]
-        public void CreateCatalogueItemWithoutAuthorisation()
+        [Xunit.SkippableFactAttribute(DisplayName="Delete specific product without authorisation")]
+        [Xunit.TraitAttribute("FeatureTitle", "DeleteRequest")]
+        [Xunit.TraitAttribute("Description", "Delete specific product without authorisation")]
+        public void DeleteSpecificProductWithoutAuthorisation()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create catalogue Item without authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete specific product without authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -159,43 +147,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "catalogBrandId",
-                            "catalogTypeId",
-                            "description",
-                            "name",
-                            "pictureUri",
-                            "pictureBase64",
-                            "pictureName",
-                            "price"});
-                table2.AddRow(new string[] {
-                            "2",
-                            "2",
-                            "Creme - Green Shirt",
-                            "CremeBlue Shirt",
-                            "shirt.com/",
-                            "shirt_category",
-                            "Multicolor shirt",
-                            "900"});
 #line 16
- testRunner.When("User add item", ((string)(null)), table2, "When ");
+ testRunner.When("User enters item id \"9\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
- testRunner.Then("Server Response status should be Unauthorized", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+ testRunner.Then("Server Response status should be unauthorised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Create existing catalogue Item with authorisation")]
-        [Xunit.TraitAttribute("FeatureTitle", "PostRequest")]
-        [Xunit.TraitAttribute("Description", "Create existing catalogue Item with authorisation")]
-        public void CreateExistingCatalogueItemWithAuthorisation()
+        [Xunit.SkippableFactAttribute(DisplayName="Delete an invalid product with authorisation")]
+        [Xunit.TraitAttribute("FeatureTitle", "DeleteRequest")]
+        [Xunit.TraitAttribute("Description", "Delete an invalid product with authorisation")]
+        public void DeleteAnInvalidProductWithAuthorisation()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create existing catalogue Item with authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete an invalid product with authorisation", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 19
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -205,36 +175,18 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 20
  testRunner.Given("User is logged with email address \"admin@microsoft.com\" and password \"Pass@word1\"" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 21
  testRunner.And("User is authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "catalogBrandId",
-                            "catalogTypeId",
-                            "description",
-                            "name",
-                            "pictureUri",
-                            "pictureBase64",
-                            "pictureName",
-                            "price"});
-                table3.AddRow(new string[] {
-                            "2",
-                            "2",
-                            "City - Green Shirt",
-                            "City-Blue Shirt",
-                            "shirt.com/",
-                            "shirt_category",
-                            "Multicolor shirt",
-                            "900"});
-#line 24
- testRunner.When("User add item", ((string)(null)), table3, "When ");
+#line 22
+ testRunner.When("User enters item id \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
- testRunner.Then("Server Response status should be Conflict", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.Then("Server Response status for deleting an item should be Not Found", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -247,12 +199,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                PostRequestFeature.FeatureSetup();
+                DeleteRequestFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PostRequestFeature.FeatureTearDown();
+                DeleteRequestFeature.FeatureTearDown();
             }
         }
     }

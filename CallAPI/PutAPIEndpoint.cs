@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
+using static EshopAPIEndpoint.specs.APIResults.PutRequestResult.PutItemCatalogResult;
 using static EshopAPIEndpoint.specs.Performance.StopWatchHelper;
 namespace EshopAPIEndpoint.specs.CallAPI
 {
@@ -26,11 +27,11 @@ namespace EshopAPIEndpoint.specs.CallAPI
             {
                 StartStopwatch();
                 response = client.Execute(request);
-                PutItemCatalogResult.executionTime = StopStopwatch();
+                executionTime = StopStopwatch();
                 requestOutput = response.Content;
                 PutItemCatalogResult.statusCode = (int)response.StatusCode;
-                PutItemCatalogResult.header = response.Headers;
-                PutItemCatalogResult.serverResponse = response.Content;
+                header = response.Headers;
+                serverResponse = response.Content;
             }
             catch (Exception ex)
             {
