@@ -7,7 +7,7 @@ Scenario: Create catalogue Item with authorisation
 	And User is authenticated
 	When User add item
 	| catalogBrandId | catalogTypeId | description  | name         | pictureUri | pictureBase64 | pictureName | price |
-	| 2              | 2             | Black laptop | Black laptop | shirt.com/ | watch         | watch shirt | 900   |
+	| 2              | 2             | Black mobile | Black mobile | shirt.com/ | watch         | watch shirt | 900   |
 	Then Server Response status should be Created
 	And Response time for authentication is between acceptable range
 	And Response time for creating item is between acceptable range

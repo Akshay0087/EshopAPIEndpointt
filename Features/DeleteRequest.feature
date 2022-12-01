@@ -5,7 +5,7 @@ As a user I want to able to remove a specific product
 Scenario: Delete specific product with authorisation
 	Given User is logged with email address "admin@microsoft.com" and password "Pass@word1" 
 	And User is authenticated
-	When User enters item id "52"
+	When User enters item id "5"
 	Then Server Response status for deleting an item should be OK
 	And Server Response content for deleting an item should be valid
 	And server Response Header for deleting an item should be valid

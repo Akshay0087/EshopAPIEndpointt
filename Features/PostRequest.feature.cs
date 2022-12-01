@@ -119,8 +119,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "2",
                             "2",
-                            "Black laptop",
-                            "Black laptop",
+                            "Black mobile",
+                            "Black mobile",
                             "shirt.com/",
                             "watch",
                             "watch shirt",
